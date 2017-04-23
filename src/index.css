@@ -3,3 +3,34 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.mainContent {
+    align-content: center;
+    align: center;
+}
+
+button.pianoButton {
+    height: 150px;
+    width: 60px;
+    background: whitesmoke;
+    border: 1px black;
+    align-content: center;
+    align: center;
+    justify-content:         center;
+}
+
+button.pianoButtonActive {
+    height: 150px;
+    width: 60px;
+    background: black;
+    color: white;
+    border: 1px black;
+    align-content: center;
+    align: center;
+    align-items: center;
+}
+
+.synthKey {
+    display: inline;
+    align: center;
+}

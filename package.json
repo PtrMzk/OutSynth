@@ -6,6 +6,8 @@
     "express": "^4.15.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-key-handler": "^0.3.0",
+    "react-keymaster": "^0.3.0",
     "requirejs": "^2.3.3",
     "web-audio-daw": "^2.3.1"
   },
