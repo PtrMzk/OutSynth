@@ -1,29 +1,39 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: black;
 }
 
 .mainContent {
+    top: 20%;
+    left: 25%;
+
+    position: absolute;
+
+    width: 10000px;
     align-content: center;
     align: center;
 }
 
 button.pianoButton {
-    height: 150px;
-    width: 60px;
-    background: whitesmoke;
-    border: 1px black;
+
+    height: 250px;
+    width: 120px;
+    background: darkviolet;
+    color: mediumblue;
+    border: 1px white;
+    border-style: solid;
     align-content: center;
     align: center;
     justify-content:         center;
 }
 
 button.pianoButtonActive {
-    height: 150px;
-    width: 60px;
-    background: black;
-    color: white;
+    height: 250px;
+    width: 120px;
+    background: blue;
+    color: blue;
     border: 1px black;
     align-content: center;
     align: center;
@@ -33,4 +43,20 @@ button.pianoButtonActive {
 .synthKey {
     display: inline;
     align: center;
+}
+
+.grid{
+    top: -400px;
+    bottom: -400px;
+    left: -400px;
+    right: -400px;
+    position: absolute;
+
+    background-color: black;
+    background-image: linear-gradient(deepskyblue 1px, transparent 2px),
+    linear-gradient(90deg, deepskyblue 1px, transparent 2px);
+    background-size:3% 3%, 3% 3%;
+    background-position:0 0, 0 0;
+
+    transform: perspective(300px) rotateX(80deg);
 }

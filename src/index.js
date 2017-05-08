@@ -12,7 +12,7 @@ var sawTone = new Wad({
         attack : .01,
         decay : .005,
         sustain : .2,
-        hold : .015,
+        hold : .15,
         release : .3
     },
     filter : {
@@ -25,21 +25,22 @@ var sawTone = new Wad({
         }
     }
 });
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
+//
+// ReactDOM.render(
+//     <App />,
+//     document.getElementById('root')
+// );
 
 ReactDOM.render(
     <div id="keyboard">
-        <Synth saw= {sawTone} keyName= "A" keyLabel="A" keyPitch="A2" keyValue = 'a'/>
-        <Synth saw= {sawTone} keyName= "B" keyLabel="B" keyPitch="B2" keyValue = 's'/>
-        <Synth saw= {sawTone} keyName= "C" keyLabel="C" keyPitch="C3" keyValue = 'd'/>
-        <Synth saw= {sawTone} keyName= "D" keyLabel="D" keyPitch="D3" keyValue = 'f'/>
-        <Synth saw= {sawTone} keyName= "E" keyLabel="E" keyPitch="E3" keyValue = 'g'/>
-        <Synth saw= {sawTone} keyName= "F" keyLabel="F" keyPitch="F3" keyValue = 'h'/>
-        <Synth saw= {sawTone} keyName= "G" keyLabel="G" keyPitch="G3" keyValue = 'j'/>
+        <Synth saw= {sawTone} keyName= "C" keyLabel="C" keyPitch="C2" keyValue = 'a'/>
+        <Synth saw= {sawTone} keyName= "D" keyLabel="D" keyPitch="D2" keyValue = 's'/>
+        <Synth saw= {sawTone} keyName= "E" keyLabel="E" keyPitch="E2" keyValue = 'd'/>
+        <Synth saw= {sawTone} keyName= "F" keyLabel="F" keyPitch="F2" keyValue = 'f'/>
+        <Synth saw= {sawTone} keyName= "G" keyLabel="G" keyPitch="G2" keyValue = 'g'/>
+        <Synth saw= {sawTone} keyName= "A" keyLabel="A" keyPitch="A2" keyValue = 'h'/>
+        <Synth saw= {sawTone} keyName= "B" keyLabel="B" keyPitch="B2" keyValue = 'j'/>
+        <Synth saw= {sawTone} keyName= "C" keyLabel="C" keyPitch="C3" keyValue = 'k'/>
     </div>,
     document.getElementById('content')
 
