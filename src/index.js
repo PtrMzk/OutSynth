@@ -1,30 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import Synth from './SynthKey';
-import './index.css';
+import App from './components/App';
+import Synth from './components/Key';
+import './css/index.css';
 import Wad from "web-audio-daw";
+import synthesizer from './controller/synthesizer';
 
-//var sawTone = new Wad({source : 'sawtooth'});
-var sawTone = new Wad({
-    source : 'square',
-    env : {
-        attack : .01,
-        decay : .005,
-        sustain : .2,
-        hold : .15,
-        release : .3
-    },
-    filter : {
-        type : 'lowpass',
-        frequency : 1200,
-        q : 8.5,
-        env : {
-            attack : .2,
-            frequency : 600
-        }
-    }
-});
+var sawTone = new Wad({source : 'sawtooth'});
+
 //
 // ReactDOM.render(
 //     <App />,
@@ -33,14 +16,33 @@ var sawTone = new Wad({
 
 ReactDOM.render(
     <div id="keyboard">
-        <Synth saw= {sawTone} keyName= "C" keyLabel="C" keyPitch="C2" keyValue = 'a'/>
-        <Synth saw= {sawTone} keyName= "D" keyLabel="D" keyPitch="D2" keyValue = 's'/>
-        <Synth saw= {sawTone} keyName= "E" keyLabel="E" keyPitch="E2" keyValue = 'd'/>
-        <Synth saw= {sawTone} keyName= "F" keyLabel="F" keyPitch="F2" keyValue = 'f'/>
-        <Synth saw= {sawTone} keyName= "G" keyLabel="G" keyPitch="G2" keyValue = 'g'/>
-        <Synth saw= {sawTone} keyName= "A" keyLabel="A" keyPitch="A2" keyValue = 'h'/>
-        <Synth saw= {sawTone} keyName= "B" keyLabel="B" keyPitch="B2" keyValue = 'j'/>
-        <Synth saw= {sawTone} keyName= "C" keyLabel="C" keyPitch="C3" keyValue = 'k'/>
+            <div id="container1" className = "keyGroup">
+        <Synth keyName= "C" keyLabel="C" keyPitch="C2" keyType = "largeKey" keyValue = 'a'/>
+        <Synth keyName= "C#" keyLabel="C#" keyPitch="C#2" keyType = "smallKey" keyValue = 'w'/>
+            </div>
+            <div id="container2" className = "keyGroup">
+            <Synth keyName= "D" keyLabel="D" keyPitch="D2" keyType = "largeKey" keyValue = 's'/>
+            <Synth keyName= "D#" keyLabel="D#" keyPitch="D#2" keyType = "smallKey" keyValue = 'e'/>
+            </div>
+            <div id="container2" className = "keyGroup">
+        <Synth keyName= "E" keyLabel="E" keyPitch="E2" keyType = "largeKey" keyValue = 'd'/>
+            </div>
+            <div id="container2" className = "keyGroup">
+        <Synth keyName= "F" keyLabel="F" keyPitch="F2" keyType = "largeKey" keyValue = 'f'/>
+                    <Synth keyName= "F#" keyLabel="F#" keyPitch="F#2" keyType = "smallKey" keyValue = 't'/>
+            </div>
+            <div id="container2" className = "keyGroup">
+        <Synth keyName= "G" keyLabel="G" keyPitch="G2" keyType = "largeKey" keyValue = 'g'/>
+                    <Synth keyName= "G#" keyLabel="G#" keyPitch="G#2" keyType = "smallKey" keyValue = 'y'/>
+            </div>
+            <div id="container2" className = "keyGroup">
+        <Synth keyName= "A" keyLabel="A" keyPitch="A2" keyType = "largeKey" keyValue = 'h'/>
+                    <Synth keyName= "A#" keyLabel="A#" keyPitch="A#2" keyType = "smallKey" keyValue = 'u'/>
+            </div>
+            <div id="container2" className = "keyGroup">
+        <Synth keyName= "B" keyLabel="B" keyPitch="B2" keyType = "largeKey" keyValue = 'j'/>
+            </div>
+
     </div>,
     document.getElementById('content')
 

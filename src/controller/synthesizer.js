@@ -1,0 +1,51 @@
+/**
+ * Created by Piotr Mikolajczyk on 5/13/2017.
+ */
+import Wad from "web-audio-daw";
+
+var synthesizer = function Synthesizer (){
+    Synthesizer.prototype = new Wad({
+        source : 'square',
+        env : {
+            attack : .01,
+            decay : .005,
+            sustain : .2,
+            hold : .15,
+            release : .3
+        },
+        filter : {
+            type : 'lowpass',
+            frequency : 1200,
+            q : 8.5,
+            env : {
+                attack : .2,
+                frequency : 600
+            }
+        }
+    });
+
+    Synthesizer.playNote = function playNote (pitch, label) {
+        synthesizer.prototype.play({
+            length: 100,
+            volume: 0.8,
+            wait: 0,     // Time in seconds between calling play() and actually triggering the note.
+            loop: false, // This overrides the value for loop on the constructor, if it was set.
+            pitch: pitch,  // A4 is 440 hertz.
+            label: label,   // A label that identifies this note.
+            env: {hold: 9001},
+            panning: [1, -1, 10],
+            filter: {frequency: 900},
+            delay: {delayTime: .8}
+        })
+    };
+
+    Synthesizer.stop = function stop()
+    {
+        synthesizer.prototype.stop();
+    }
+
+};
+
+
+
+export default synthesizer;

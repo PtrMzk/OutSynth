@@ -1,0 +1,103 @@
+@import url(http://fonts.googleapis.com/css?family=Mr+Dafoe);
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: black;
+    overflow-x: hidden;
+}
+.mainWrapper {
+    position:fixed;
+    align-content: center;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.mainContent {
+    position: relative;
+    width: calc(100% / 2 - (22.15px * 4 * 7));
+    top: calc(100% - (126.27px * 4));
+    min-width: calc(22.15px * 4 * 7);
+    margin: 0 auto;
+    align-content: center;
+}
+.title{
+    z-index: 200;
+    color:white;
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 100px;
+}
+
+.keyGroup
+{
+    display: inline-block;
+}
+
+
+.synthKey {
+    display: inline;
+    align: center;
+}
+
+button.largeKey {
+    display: inline-block;
+    align: center;
+    height: calc(126.27px * 4);
+    width: calc(22.15px * 4);
+    background: white;
+    color: mediumblue;
+    border: 1px gray;
+    border-style: solid;
+    align-content: center;
+    position: relative;
+    justify-content:         center;
+    left: 25%;
+
+
+}
+
+button.largeKey.largeKeyActive {
+    background: lightgrey;
+    color: blue;
+}
+
+button.smallKey {
+    vertical-align: top;
+    height: calc(80px * 4);
+    width: calc(11px * 4);
+    background: black;
+    color: white;
+    border: 1px white;
+    border-style: solid;
+    position: absolute;
+    z-index:100;
+    left: auto;
+
+}
+
+button.smallKey.smallKeyActive
+{
+    background: blue;
+    color: purple;
+}
+
+
+
+.grid{
+    top: -10%;
+    bottom: -10%;
+    left: -10%;
+    right: -10%;
+    position: absolute;
+    z-index: -100;
+    background-color: black;
+    background-image: linear-gradient(deepskyblue 1px, transparent 2px),
+    linear-gradient(90deg, deepskyblue 1px, transparent 2px);
+    background-size:3% 3%, 3% 3%;
+    background-position:0 0, 0 0;
+
+
+    transform: perspective(500px) rotateX(80deg);
+}
