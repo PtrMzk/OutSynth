@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Wad from "web-audio-daw";
 import synthesizer from '../controller/synthesizer'
 import KeyHandler from 'react-key-handler';
 

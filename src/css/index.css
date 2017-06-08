@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+@import url(http://fonts.googleapis.com/css?family=Mrs+Sheppards);
+@import url(http://fonts.googleapis.com/css?family=Rock+Salt);
 @import url(http://fonts.googleapis.com/css?family=Mr+Dafoe);
 
 body {
@@ -16,18 +19,24 @@ body {
     height:100%;
 }
 .mainContent {
-    position: relative;
-    width: calc(100% / 2 - (22.15px * 4 * 7));
+    position: absolute;
+    width: 100%;
     top: calc(100% - (126.27px * 4));
     min-width: calc(22.15px * 4 * 7);
     margin: 0 auto;
-    align-content: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
 }
+
 .title{
     z-index: 200;
-    color:white;
+    color:mediumpurple;
     font-family: 'Mr Dafoe', cursive;
     font-size: 100px;
+    text-align: center;
+
 }
 
 .keyGroup
