@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import synthesizer from '../controller/synthesizer'
 import KeyHandler from 'react-key-handler';
 
-class Synth extends Component {
+class Key extends Component {
     constructor(props) {
         super(props); //super gives us access to "this" keyword
         this.state = {count: 0, isPlaying: false};
         this.handleClick = this.handleClick.bind(this);
         this.stopButton = this.stopButton.bind(this);
         this.keyPressHandler = this.keyPressHandler.bind(this);
-        this.synthesizer = new synthesizer();
     }
 
     handleClick(){
         if (!this.state.isPlaying)
         {
-            synthesizer.playNote(this.props.keyPitch, this.props.keyLabel);
+            console.log(synthesizer.typeof);
+            this.props.synthesizer.playNote(this.props.keyPitch, this.props.keyLabel);
             this.setState({isPlaying: true});
         }
         else
@@ -27,7 +27,7 @@ class Synth extends Component {
     stopButton(){
         if (this.state.isPlaying)
         {
-            synthesizer.stop();
+            this.props.synthesizer.stop();
             this.setState({isPlaying: false});
         }
         //alert('stopped');
@@ -63,13 +63,13 @@ class Synth extends Component {
     }
 }
 
-Synth.defaultProps = {
+Key.defaultProps = {
     parameterName: "Hey man set your defaults",
     isPlaying: false
 };
 
-Synth.propTypes = {keyName: React.PropTypes.string,
+Key.propTypes = {keyName: React.PropTypes.string,
 keyValue: React.PropTypes.string,
 isPlaying: React.PropTypes.bool};
 
-export default Synth;
+export default Key;

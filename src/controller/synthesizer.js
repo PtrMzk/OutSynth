@@ -3,9 +3,14 @@
  */
 import Wad from "web-audio-daw";
 
-var synthesizer = function Synthesizer (){
+var synthesizer = function Synthesizer (signalType){
+    Synthesizer.setSignalType = function setSignalType(newSignalType)
+    {
+        signalType = newSignalType;
+    };
+
     Synthesizer.prototype = new Wad({
-        source : 'square',
+        source : signalType,
         env : {
             attack : .01,
             decay : .005,
