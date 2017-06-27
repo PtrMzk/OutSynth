@@ -3,13 +3,13 @@
  */
 import Wad from "web-audio-daw";
 
-var synthesizer = function Synthesizer (signalType){
+function Synthesizer (signalType){
     Synthesizer.setSignalType = function setSignalType(newSignalType)
     {
         signalType = newSignalType;
     };
 
-    Synthesizer.prototype = new Wad({
+   this.prototype = new Wad({
         source : signalType,
         env : {
             attack : .01,
@@ -29,8 +29,8 @@ var synthesizer = function Synthesizer (signalType){
         }
     });
 
-    Synthesizer.playNote = function playNote (pitch, label) {
-        synthesizer.prototype.play({
+    this.playNote = function playNote (pitch, label) {
+        this.prototype.play({
             length: 100,
             volume: 0.8,
             wait: 0,     // Time in seconds between calling play() and actually triggering the note.
@@ -44,13 +44,13 @@ var synthesizer = function Synthesizer (signalType){
         })
     };
 
-    Synthesizer.stop = function stop()
+    this.stop = function stop()
     {
-        synthesizer.prototype.stop();
+        this.prototype.stop();
     }
 
 };
 
 
 
-export default synthesizer;
+export default Synthesizer;

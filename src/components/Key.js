@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import synthesizer from '../controller/synthesizer'
 import KeyHandler from 'react-key-handler';
 
+
 class Key extends Component {
     constructor(props) {
         super(props); //super gives us access to "this" keyword
@@ -14,7 +15,6 @@ class Key extends Component {
     handleClick(){
         if (!this.state.isPlaying)
         {
-            console.log(synthesizer.typeof);
             this.props.synthesizer.playNote(this.props.keyPitch, this.props.keyLabel);
             this.setState({isPlaying: true});
         }
@@ -64,7 +64,7 @@ class Key extends Component {
 }
 
 Key.defaultProps = {
-    parameterName: "Hey man set your defaults",
+    parameterName: "Pleaseset your defaults",
     isPlaying: false
 };
 
