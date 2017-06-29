@@ -27,6 +27,7 @@ body {
     display:flex;
     justify-content:center;
     align-items:center;
+
 }
 
 .title{
@@ -35,6 +36,7 @@ body {
     font-family: 'Mr Dafoe', cursive;
     font-size: 100px;
     text-align: center;
+
 }
 
 .keyGroup
@@ -42,6 +44,19 @@ body {
     display: inline-block;
 }
 
+.keyboardControls
+{
+    alignment:center;
+    min-width:inherit;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.keyboardWrapper
+{
+    min-width: inherit;
+}
 .synthKey {
     display: inline;
     align: center;
@@ -58,8 +73,10 @@ button.largeKey {
     border-style: solid;
     align-content: center;
     position: relative;
-    justify-content: center;
+    justify-content:         center;
     left: 25%;
+
+
 }
 
 button.largeKey.largeKeyActive {
@@ -78,6 +95,7 @@ button.smallKey {
     position: absolute;
     z-index:100;
     left: auto;
+
 }
 
 button.smallKey.smallKeyActive
@@ -85,6 +103,8 @@ button.smallKey.smallKeyActive
     background: blue;
     color: purple;
 }
+
+
 
 .grid{
     top: -10%;
@@ -98,5 +118,7 @@ button.smallKey.smallKeyActive
     linear-gradient(90deg, deepskyblue 1px, transparent 2px);
     background-size:3% 3%, 3% 3%;
     background-position:0 0, 0 0;
+
+
     transform: perspective(500px) rotateX(80deg);
 }

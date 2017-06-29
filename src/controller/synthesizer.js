@@ -49,8 +49,5 @@ function Synthesizer (signalType){
         this.prototype.stop();
     }
 
-};
-
-
-
+}
 export default Synthesizer;

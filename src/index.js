@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Keyboard from './components/Keyboard'
 import './css/index.css';
-import Synthesizer from "./controller/synthesizer";
 
 //
 // ReactDOM.render(
@@ -16,7 +15,7 @@ import Synthesizer from "./controller/synthesizer";
 ReactDOM.render(
 
     <div id="keyboard">
-        <Keyboard></Keyboard>
+        <Keyboard/>
     </div>,
     document.getElementById('content')
 

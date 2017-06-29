@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import synthesizer from '../controller/synthesizer'
+import React, {Component} from 'react';
 import KeyHandler from 'react-key-handler';
 
 
@@ -12,32 +11,29 @@ class Key extends Component {
         this.keyPressHandler = this.keyPressHandler.bind(this);
     }
 
-    handleClick(){
-        if (!this.state.isPlaying)
-        {
+    handleClick() {
+        if (!this.state.isPlaying) {
             this.props.synthesizer.playNote(this.props.keyPitch, this.props.keyLabel);
             this.setState({isPlaying: true});
         }
-        else
-        {
+        else {
             this.stopButton();
         }
     };
 
-    stopButton(){
-        if (this.state.isPlaying)
-        {
+    stopButton() {
+        if (this.state.isPlaying) {
             this.props.synthesizer.stop();
             this.setState({isPlaying: false});
         }
         //alert('stopped');
     };
 
-    keyPressHandler(event){
+    keyPressHandler(event) {
 
-      //  console.log("detected key event");
-       // console.log(event.charCode);
-      //a  console.log(this.props.targetKeyCode + "Key Code");
+        //  console.log("detected key event");
+        // console.log(event.charCode);
+        //a  console.log(this.props.targetKeyCode + "Key Code");
         this.handleClick();
 
         //}
@@ -47,16 +43,16 @@ class Key extends Component {
         //console.log("State" + this.state.isPlaying);
         return (
             <div className="synthKey">
-                <KeyHandler keyEventName='keydown' keyValue={this.props.keyValue} onKeyHandle={this.keyPressHandler} />
-                <KeyHandler keyEventName='keyup' keyValue={this.props.keyValue} onKeyHandle={this.stopButton} />
+                <KeyHandler keyEventName='keydown' keyValue={this.props.keyValue} onKeyHandle={this.keyPressHandler}/>
+                <KeyHandler keyEventName='keyup' keyValue={this.props.keyValue} onKeyHandle={this.stopButton}/>
                 <button
                     id="soundButton"
-                    className= {this.props.keyType + (this.state.isPlaying ? " " + this.props.keyType + "Active" : "")}
-                    onMouseDown = {this.handleClick}
-                    onMouseUp = {this.stopButton}
+                    className={this.props.keyType + (this.state.isPlaying ? " " + this.props.keyType + "Active" : "")}
+                    onMouseDown={this.handleClick}
+                    onMouseUp={this.stopButton}
                     //onKeyDownCapture = {this.keyPressHandler}
                 >
-                {this.props.keyName}
+                    {this.props.keyName}
                 </button>
             </div>
         );//to pass parameters do {} => this.click(value)
@@ -68,8 +64,10 @@ Key.defaultProps = {
     isPlaying: false
 };
 
-Key.propTypes = {keyName: React.PropTypes.string,
-keyValue: React.PropTypes.string,
-isPlaying: React.PropTypes.bool};
+Key.propTypes = {
+    keyName: React.PropTypes.string,
+    keyValue: React.PropTypes.string,
+    isPlaying: React.PropTypes.bool
+};
 
 export default Key;
