@@ -60,7 +60,7 @@ class Key extends Component {
 }
 
 Key.defaultProps = {
-    parameterName: "Pleaseset your defaults",
+    parameterName: "Please set your defaults",
     isPlaying: false
 };
 
